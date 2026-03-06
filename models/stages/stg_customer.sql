@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='view', enabled=false) }}
 
 {%- set yaml_metadata -%}
 source_model:
