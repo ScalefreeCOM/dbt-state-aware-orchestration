@@ -13,7 +13,7 @@ payload:
     - l_extendedprice
     - l_discount
     - l_tax
-
+    - l_receiptdate
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
