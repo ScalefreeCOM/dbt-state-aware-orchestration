@@ -7,6 +7,9 @@ source_models:
     stg_partsupp:
         bk_columns: ps_suppkey
         rsrc_static: 'TPC_H_SF1.Partsupp'
+    stg_lineitem:
+        bk_columns: l_suppkey
+        rsrc_static: 'TPC_H_SF1.LineItem'
 hashkey: hk_supplier_h
 business_keys: s_suppkey
 {%- endset -%}      
