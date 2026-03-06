@@ -1,22 +1,24 @@
 version: 2
 
-models:     
+models:
   - name: region_h
     columns:
       - name: hk_region_h
         tests:
           - unique
-          - not_null               
+          - not_null
   - name: region_n0_s
     tests:
-    - dbt_utils.unique_combination_of_columns:
-        combination_of_columns: 
-          - hk_region_h
-          - ldts    
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - hk_region_h
+              - ldts
     columns:
       - name: hk_region_h
         tests:
           - not_null
           - relationships:
-              to: ref('region_h')
-              field: hk_region_h                          
+              arguments:
+                to: ref('region_h')
+                field: hk_region_h
