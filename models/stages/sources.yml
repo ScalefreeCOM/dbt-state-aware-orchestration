@@ -1,15 +1,38 @@
 version: 2
 
+# Original Snowflake sources:
+# sources:
+#   - name: TPC-H_SF1
+#     database: SNOWFLAKE_SAMPLE_DATA
+#     schema: TPCH_SF1
+#     tables:
+#       - name: Customer
+#       - name: LineItem
+#       - name: Nation
+#       - name: Orders
+#       - name: Part
+#       - name: Partsupp
+#       - name: Region
+#       - name: Supplier
+
 sources:
   - name: TPC-H_SF1
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
+    database: scalefree-bigquery-playground
+    schema: dbt_state_aware_orchestration
     tables:
       - name: Customer
+        identifier: CUSTOMER_TPCH_SF1
       - name: LineItem
+        identifier: LINEITEM_TPCH_SF1
       - name: Nation
+        identifier: NATION_TPCH_SF1
       - name: Orders
+        identifier: ORDERS_TPCH_SF1
       - name: Part
+        identifier: PART_TPCH_SF1
       - name: Partsupp
+        identifier: PARTSUPP_TPCH_SF1
       - name: Region
+        identifier: REGION_TPCH_SF1
       - name: Supplier
+        identifier: SUPPLIER_TPCH_SF1

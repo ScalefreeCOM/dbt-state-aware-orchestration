@@ -30,7 +30,7 @@ hashed_columns:
             - l_shipinstruct
             - l_shipmode
             - l_comment
-ldts: "SYSDATE()"
+ldts: "CURRENT_TIMESTAMP()"
 rsrc: '!TPC_H_SF1.LineItem'
 {%- endset -%}
 

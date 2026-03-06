@@ -1,12 +1,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'datavault4dbt_snowflake_demo'
+name: 'dbt-state-aware-orchestration'
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'datavault4dbt_snowflake_demo'
+profile: 'dbt-state-aware-orchestration'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -27,7 +27,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # If this is not desired you can remove the whole below block.
 # dbt will then only use the target schema as defined in the profiles.yml
 models:
-  datavault4dbt_snowflake_demo:
+  dbt-state-aware-orchestration:
     business_vault:
       +schema: core
     control:

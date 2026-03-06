@@ -22,7 +22,7 @@ hashed_columns:
             - legacy_orderkey
 missing_columns:
     legacy_orderkey: 'STRING'
-ldts: "SYSDATE()"
+ldts: "CURRENT_TIMESTAMP()"
 rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
 

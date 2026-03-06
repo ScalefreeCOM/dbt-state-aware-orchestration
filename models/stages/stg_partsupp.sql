@@ -17,7 +17,7 @@ hashed_columns:
             - ps_availqty
             - ps_supplycost
             - ps_comment
-ldts: "SYSDATE()"
+ldts: "CURRENT_TIMESTAMP()"
 rsrc: '!TPC_H_SF1.Partsupp'
 {%- endset -%}
 

@@ -23,7 +23,7 @@ hashed_columns:
             - c_acctbal
             - c_mktsegment
             - c_comment
-ldts: "SYSDATE()"
+ldts: "CURRENT_TIMESTAMP()"
 rsrc: '!TPC_H_SF1.Customer'
 {%- endset -%}
 

@@ -11,7 +11,7 @@ hashed_columns:
         columns:
             - r_name
             - r_comment
-ldts: "SYSDATE()"
+ldts: "CURRENT_TIMESTAMP()"
 rsrc: '!TPC_H_SF1.Region'
 {%- endset -%}
 

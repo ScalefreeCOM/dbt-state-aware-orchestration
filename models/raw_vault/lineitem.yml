@@ -7,12 +7,12 @@ models:
         tests:
           - unique
           - not_null
-      - name: hk_orders_h
+      - name: hk_order_h
         tests:
           - relationships:
               arguments:
-                to: ref('orders_h')
-                field: hk_orders_h
+                to: ref('order_h')
+                field: hk_order_h
       - name: hk_part_h
         tests:
           - relationships:

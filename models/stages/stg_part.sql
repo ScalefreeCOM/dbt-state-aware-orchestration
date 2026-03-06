@@ -17,7 +17,7 @@ hashed_columns:
             - p_container
             - p_retailprice
             - p_comment
-ldts: "SYSDATE()"
+ldts: "CURRENT_TIMESTAMP()"
 rsrc: '!TPC_H_SF1.Part'
 {%- endset -%}
 
