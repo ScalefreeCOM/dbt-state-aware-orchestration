@@ -6,8 +6,9 @@
         "period": "hour",
         "updates_on": "all"
       }
-    }
-  )
+    },
+  materialized='table')
+  
 }}
 
 
