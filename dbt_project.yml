@@ -5,6 +5,9 @@ name: 'dbt-state-aware-orchestration'
 version: '1.0.0'
 config-version: 2
 
+dbt-cloud:
+    project-id: 514981
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dbt-state-aware-orchestration'
 

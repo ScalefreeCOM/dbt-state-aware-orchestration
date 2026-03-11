@@ -19,6 +19,10 @@ sources:
   - name: TPC-H_SF1
     database: scalefree-bigquery-playground
     schema: dbt_state_aware_orchestration
+#    freshness:
+#      build_after:
+#        count: 1
+#        period: hour
     tables:
       - name: Customer
         identifier: CUSTOMER_TPCH_SF1
