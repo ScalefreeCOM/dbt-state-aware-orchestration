@@ -2,7 +2,9 @@
   config(
     freshness={
       "build_after": {
-        "updates_on": "all"
+        "count": 0,           
+        "period": "minute",   
+        "updates_on": "all"    
       }
     },
   materialized='table')
