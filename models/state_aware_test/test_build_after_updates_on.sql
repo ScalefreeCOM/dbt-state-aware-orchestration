@@ -1,3 +1,14 @@
+{{
+  config(
+    freshness={
+      "build_after": {
+        "count": 1,
+        "period": "hour",
+        "updates_on": "all"
+      }
+    }
+  )
+}}
 
 
 SELECT *EXCEPT(ldts,rsrc)
