@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
 source_model: stg_customer
