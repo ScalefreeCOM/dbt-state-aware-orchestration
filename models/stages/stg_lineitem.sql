@@ -18,6 +18,8 @@ hashed_columns:
     hd_lineitem_n_s:
         is_hashdiff: true
         columns:
+            - l_quantity
+            - l_extendedprice
             - l_discount
             - l_tax
             - l_returnflag
