@@ -24,7 +24,7 @@ sources:
      #   count: 0
       #  period: minute
       #  updates_on: all
-    loaded_at_field: edwLoadDate
+      loaded_at_field: edwLoadDate
     tables:
       - name: Customer
         identifier: CUSTOMER_TPCH_SF1
