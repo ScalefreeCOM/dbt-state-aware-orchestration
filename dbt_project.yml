@@ -36,9 +36,9 @@ models:
   dbt-state-aware-orchestration:
     +freshness:
       build_after:
-        count: 1
-        period: hour
-        updates_on: any
+        count: 0
+        period: minutes
+        updates_on: all
     business_vault:
       +schema: core
     control:
