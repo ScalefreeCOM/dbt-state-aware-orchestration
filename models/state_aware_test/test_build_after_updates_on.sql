@@ -1,12 +1,5 @@
 {{
   config(
-    freshness={
-      "build_after": {
-        "count": 0,           
-        "period": "minute",   
-        "updates_on": "all"    
-      }
-    },
   materialized='table')
   
 }}

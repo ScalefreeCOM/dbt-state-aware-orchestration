@@ -24,7 +24,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 seeds:
   dbt-state-aware-orchestration:
-    +enabled: false
+    +enabled: true
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -34,6 +34,11 @@ seeds:
 # dbt will then only use the target schema as defined in the profiles.yml
 models:
   dbt-state-aware-orchestration:
+#    +freshness:
+#      build_after:
+#        count: 0
+#        period: minute
+#        updates_on: all
     business_vault:
       +schema: core
     control:
