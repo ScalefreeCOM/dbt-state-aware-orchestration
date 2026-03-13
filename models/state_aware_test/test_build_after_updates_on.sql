@@ -5,7 +5,7 @@
 }}
 
 
-SELECT *EXCEPT(ldts,rsrc), 'test' AS test
+SELECT *EXCEPT(ldts,rsrc)
 FROM {{ ref('customer_h') }}
 JOIN {{ ref('order_h') }} ON 1=1
 JOIN {{ ref('nation_h') }} ON 1=1
