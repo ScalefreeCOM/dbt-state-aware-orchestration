@@ -1,4 +1,4 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
 source_model: stg_customer
@@ -7,7 +7,7 @@ src_hashdiff: hd_customer_n_s
 src_payload:
     - c_acctbal
     - c_mktsegment
-
+    - c_comment
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
