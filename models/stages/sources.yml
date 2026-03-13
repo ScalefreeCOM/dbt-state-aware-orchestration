@@ -20,11 +20,12 @@ sources:
     database: scalefree-bigquery-playground
     schema: dbt_state_aware_orchestration
     freshness:
-     # build_after:
-     #   count: 0
-      #  period: minute
-      #  updates_on: all
-      loaded_at_field: edwLoadDate
+          loaded_at_field: edwLoadDate
+          # Falls du build_after einkommentierst, muss es unter freshness stehen:
+          # build_after:
+          #   count: 0
+          #   period: minute
+          #   updates_on: all
     tables:
       - name: Customer
         identifier: CUSTOMER_TPCH_SF1
