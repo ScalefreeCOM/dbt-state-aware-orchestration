@@ -1,4 +1,4 @@
-{% macro insert_new_row_timestamp(source_name, table_name, edwLoadDate) %}
+{% macro insert_new_row_timestamp(source_name, table_name, edwLoadDate=None) %}
 
     {# Resolve the source relation #}
     {% set src = source(source_name, table_name) %}
@@ -9,6 +9,13 @@
     {% if columns | length == 0 %}
         {{ exceptions.raise_compiler_error("No columns found for source " ~ source_name ~ "." ~ table_name ~ ". Does the table exist in the warehouse?") }}
     {% endif %}
+
+    {% set edw_ts_expr %}
+        COALESCE(
+            SAFE_CAST('{{ edwLoadDate if edwLoadDate is not none else "" }}' AS TIMESTAMP),
+            CURRENT_TIMESTAMP()
+        )
+    {% endset %}
 
     {# Build the INSERT statement with random values per column type #}
     {% set insert_sql %}
@@ -23,11 +30,14 @@
 
             {%- if col.name | lower == 'edwloaddate' -%}
                 {%- if dtype in ('DATE',) -%}
-                    PARSE_DATE('%d-%m-%Y', '{{ edwLoadDate }}')
+                    DATE({{ edw_ts_expr }})
                 {%- elif dtype in ('TIMESTAMP', 'DATETIME') -%}
-                    PARSE_TIMESTAMP('%d-%m-%Y', '{{ edwLoadDate }}')
+                    {{ edw_ts_expr }}
                 {%- else -%}
-                    CAST('{{ edwLoadDate }}' AS STRING)
+                    FORMAT_TIMESTAMP(
+                        '%Y-%m-%dT%H:%M:%SZ',
+                        {{ edw_ts_expr }}
+                    )
                 {%- endif %}
 
             {%- elif dtype in ('INT64', 'INTEGER', 'INT', 'SMALLINT', 'BIGINT', 'TINYINT', 'BYTEINT') -%}
