@@ -20,8 +20,8 @@ sources:
     database: scalefree-bigquery-playground
     schema: dbt_state_aware_orchestration
     config:
-      loaded_at_query: "select max(edwLoadDate) from {{ this }}"
-      tables:
+      loaded_at_query: "select max(edwLoadDate AS TIMESTAMP) from {{ this }}"
+    tables:
       - name: Customer
         identifier: CUSTOMER_TPCH_SF1
       - name: LineItem
