@@ -19,8 +19,6 @@ sources:
   - name: TPC-H_SF1
     database: scalefree-bigquery-playground
     schema: dbt_state_aware_orchestration
-    config:
-      loaded_at_query: "select max(edwLoadDate) from {{ this }}"
     tables:
       - name: Customer
         identifier: CUSTOMER_TPCH_SF1
