@@ -37,7 +37,7 @@ models:
     +freshness:
       build_after:
         count: 0
-        period: minutes
+        period: minute
         updates_on: all
     business_vault:
       +schema: core
