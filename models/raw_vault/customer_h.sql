@@ -7,7 +7,7 @@ source_models:
     stg_order:
         hk_column: hk_customer_h
         bk_columns: o_custkey
-        rsrc_static: 'TPC_H_SF1.Orders'
+        rsrc_static: 'TPC_H_SF1.Order'
 hashkey: hk_customer_h
 business_keys: c_custkey
 {%- endset -%}      
